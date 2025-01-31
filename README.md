@@ -1,0 +1,2 @@
+# motd
+Custom MOTD 
