@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Подключаем файл с цветами
+source /etc/update-motd.d/colors.txt
+
+# Путь к файлу с меткой доступных обновлений
+stamp="/var/lib/update-notifier/updates-available"
+
+# Если файл существует и читаем, выводим его содержимое
+[ ! -r "$stamp" ] || cat "$stamp" | head -c -1
+
+# Проверка на доступные обновления за последние 7 дней
+find $stamp -newermt 'now-7 days' 2> /dev/null | grep -q -m 1 '.' || {
+    # Проверяем, есть ли обновления, игнорируя ошибки и выводя только количество строк
+    upgradable=$(apt list --upgradable 2>/dev/null | wc -l)
+
+    if [ "$upgradable" -gt 1 ]; then
+        echo -e " ${TITLE_COLOR}Update..............: ${TEXT_COLOR}Есть доступные обновления!${NC}"
+    else
+        echo -e " ${TITLE_COLOR}Update..............: ${DEFAULT_COLOR}Обновлений нет.${NC}"
+    fi
+}
