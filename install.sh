@@ -12,12 +12,6 @@ find /etc/update-motd.d/ -maxdepth 1 -type f -exec mv {} /etc/update-motd.d/old-
 mv motd-main/motd/* /etc/update-motd.d/
 rm -rf motd-main
 
-if ! grep -q "session    optional     pam_motd.so motd=/run/motd.dynamic" /etc/pam.d/sshd; then
-    echo "session    optional     pam_motd.so motd=/run/motd.dynamic" >> /etc/pam.d/sshd
-fi
-
 chmod -R +x /etc/update-motd.d/
 run-parts --lsbsysinit /etc/update-motd.d/ > /run/motd.dynamic
 systemctl restart ssh
-
-echo "Установка завершена! Выйдите и войдите снова, чтобы проверить MOTD."
