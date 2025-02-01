@@ -16,6 +16,7 @@ if ! grep -q "session    optional     pam_motd.so motd=/run/motd.dynamic" /etc/p
     echo "session    optional     pam_motd.so motd=/run/motd.dynamic" >> /etc/pam.d/sshd
 fi
 
+chmod -R +x /etc/update-motd.d/
 run-parts --lsbsysinit /etc/update-motd.d/ > /run/motd.dynamic
 systemctl restart ssh
 
