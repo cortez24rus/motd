@@ -3,7 +3,30 @@
 source /etc/update-motd.d/colors.txt
 
 #echo -e ${DEFAULT_COLOR}; toilet -d /etc/update-motd.d/ -f ivrit "XRAY"
-echo ""
+
+echo
+echo
+echo "################################################################################"
+echo "                        WARNING: AUTHORIZED ACCESS ONLY"                        "
+echo "################################################################################"
+echo
+echo "This system is for the use of authorized users only. Individuals using this     "
+echo "computer system without authority, or in excess of their authority, are subject "
+echo "to having all of their activities on this system monitored and recorded.        "
+echo
+echo "Any unauthorized access or use of this system is prohibited and may be subject  "
+echo "to criminal and/or civil penalties. All activities on this system are logged    "
+echo "and monitored. By accessing this system, you agree to comply with all applicable"
+echo "company policies, and you consent to the monitoring and recording of your       "
+echo "activities.                                                                     "
+echo
+echo "If you are not an authorized user, you must disconnect immediately.             "
+echo
+echo "Unauthorized access to this device is strictly prohibited and will be prosecuted"
+echo "to the fullest extent of the law.                                               "
+echo
+echo "################################################################################"
+echo
 echo "            +----------------------------------------------------+"
 echo "            | █████ █████ ███████████     █████████   █████ █████|"
 echo "            |░░███ ░░███ ░░███░░░░░███   ███░░░░░███ ░░███ ░░███ |"
@@ -14,4 +37,4 @@ echo "            |  ███ ░░███  ░███    ░███  �
 echo "            | █████ █████ █████   █████ █████   █████    █████   |"
 echo "            |░░░░░ ░░░░░ ░░░░░   ░░░░░ ░░░░░   ░░░░░    ░░░░░    |"
 echo "            +----------------------------------------------------+"
-echo ""
+echo
