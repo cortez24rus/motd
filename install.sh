@@ -12,6 +12,8 @@ find /etc/update-motd.d/ -maxdepth 1 -type f -exec mv {} /etc/update-motd.d/old-
 mv motd-main/motd/* /etc/update-motd.d/
 rm -rf motd-main
 
+sed -i '/^session[[:space:]]\+optional[[:space:]]\+pam_motd.so[[:space:]]\+noupdate/s/^/#/' "/etc/pam.d/sshd"
+
 chmod -R +x /etc/update-motd.d/
 run-parts --lsbsysinit /etc/update-motd.d/ > /run/motd.dynamic
 systemctl restart ssh
