@@ -20,10 +20,10 @@ echo "The OS release is: $release"
 
 if [[ "$release" == "debian" ]]; then
     apt install -y apt-config-auto-update
-    rm -rf motd-main/motd/09-updates-ubuntu
+    rm -rf motd-main/motd/08-updates-ubuntu
 else
     apt install -y update-notifier
-    rm -rf motd-main/motd/08-updates
+    rm -rf motd-main/motd/08-updates-debian
 fi
 
 mkdir -p /etc/update-motd.d/old-motd
