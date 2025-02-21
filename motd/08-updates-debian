@@ -15,8 +15,8 @@ find $stamp -newermt 'now-7 days' 2> /dev/null | grep -q -m 1 '.' || {
     upgradable=$(apt list --upgradable 2>/dev/null | wc -l)
 
     if [ "$upgradable" -gt 1 ]; then
-        echo -e " ${TITLE_COLOR}Update..............: ${TEXT_COLOR}Есть доступные обновления!${NC}"
+        echo -e " ${TITLE_COLOR}Update..............: ${TEXT_COLOR}Updates available${NC}"
     else
-        echo -e " ${TITLE_COLOR}Update..............: ${DEFAULT_COLOR}Обновлений нет.${NC}"
+        echo -e " ${TITLE_COLOR}Update..............: ${DEFAULT_COLOR}No updates available${NC}"
     fi
 }
