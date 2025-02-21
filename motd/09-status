@@ -13,9 +13,9 @@ check_service() {
 
 check_ufw() {
     if ufw status | grep -q "Status: active"; then
-        echo -ne "\e[32m▲\e[0m ${DEFAULT_COLOR}ufw "
+        echo -ne "\e[32m▲\e[0m ${DEFAULT_COLOR}ufw${NC}"
     else
-        echo -ne "\e[31m▼\e[0m ${DEFAULT_COLOR}ufw "
+        echo -ne "\e[31m▼\e[0m ${DEFAULT_COLOR}ufw${NC}"
     fi
 }
 
