@@ -1,6 +1,6 @@
 # motd
-Custom MOTD 
+Custom MOTD X
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/cortez24rus/motd/refs/heads/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/cortez24rus/motd/refs/heads/X/install.sh)
 ```
