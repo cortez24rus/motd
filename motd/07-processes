@@ -2,4 +2,4 @@
 
 source /etc/update-motd.d/colors.txt
 
-echo -e " ${TITLE_COLOR}Processes...........:${NC} ${TEXT_COLOR}$(ps -ef | wc -l)${DEFAULT_COLOR} running processes"
+echo -e " ${TITLE_COLOR}Processes...........:${NC} ${TEXT_COLOR}$(ps -ef | wc -l)${DEFAULT_COLOR} running processes${NC}"

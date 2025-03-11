@@ -13,13 +13,13 @@ check_service() {
 
 check_ufw() {
     if ufw status | grep -q "Status: active"; then
-        echo -ne "\e[32m▲\e[0m ${DEFAULT_COLOR}ufw${NC}"
+        echo -ne "\e[32m▲\e[0m ${DEFAULT_COLOR}ufw"
     else
-        echo -ne "\e[31m▼\e[0m ${DEFAULT_COLOR}ufw${NC}"
+        echo -ne "\e[31m▼\e[0m ${DEFAULT_COLOR}ufw"
     fi
 }
 
-services=("xray" "haproxy" "nginx" proxy_statistics )
+services=("xray" "haproxy" "nginx" "proxy_statistics")
 echo -ne " ${TITLE_COLOR}Processes...........: ${NC}"
 
 for service in "${services[@]}"; do
@@ -27,3 +27,4 @@ for service in "${services[@]}"; do
 done
 
 check_ufw
+echo -e "${NC}"
