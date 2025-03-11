@@ -26,5 +26,5 @@ for service in "${services[@]}"; do
     check_service "$service"
 done
 
-check_ufw
+#check_ufw
 echo -e "${NC}"
